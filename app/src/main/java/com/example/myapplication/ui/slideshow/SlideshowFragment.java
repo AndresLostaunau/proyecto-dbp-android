@@ -16,12 +16,20 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.FragmentSlideshowBinding;
 
+import org.jetbrains.annotations.NotNull;
+
 public class SlideshowFragment extends Fragment {
 
-    EditText total;
+    TextView nameText, total;
 
     private SlideshowViewModel slideshowViewModel;
     private FragmentSlideshowBinding binding;
+
+    @Override
+    public void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+//        getParentFragment().setFragmentResultListener();
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -40,4 +48,14 @@ public class SlideshowFragment extends Fragment {
         binding = null;
     }
 
+    @Override
+    public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        nameText = view.findViewById(R.id.nameText);
+        total = view.findViewById(R.id.total);
+
+
+
+    }
 }
