@@ -36,6 +36,7 @@ public class GalleryFragment extends Fragment {
         EditText saldo = root.findViewById(R.id.saldo);
         Button btn200 = root.findViewById(R.id.costo200);
         Button btn150 = root.findViewById(R.id.costo150);
+        Button btn120 = root.findViewById(R.id.costo120);
 
         btn150.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +50,14 @@ public class GalleryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 int nuevo= Integer.parseInt(saldo.getText().toString())-200;
+                saldo.setText(String.valueOf(nuevo));
+            }
+        });
+
+        btn120.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int nuevo= Integer.parseInt(saldo.getText().toString())-120;
                 saldo.setText(String.valueOf(nuevo));
             }
         });
