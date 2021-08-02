@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.List;
+
 /**
  Para llamar a DBService es necesario pedir una instancia con DBService.getInstance()
  Es recomendable usar funciones encadenadas a la instancia llamada.
@@ -20,11 +22,11 @@ public class DBService {
     private DBService(){
         try{
             Class.forName("org.postgresql.Driver");
-            connection = DriverManager.getConnection("jdbc:postgresql://204.2.195.90:30794/CS2901sec01?currentSchema=kito"
-                    ,"sec01grupo01"
+            connection = DriverManager.getConnection("jdbc:postgresql://204.2.195.90:30794/CS2901sec01"
+                    ,"sec01group01"
                     ,"utec2021");
         }catch (Exception e){
-            System.out.println("Sucedio un error");
+            System.out.println(e.getMessage());
         }
     }
 
@@ -133,4 +135,15 @@ public class DBService {
         }catch (Exception ignore){
         }
     }
+
+//    public List<Client> getClients(){
+//
+//        try{
+//            Statement statement = connection.createStatement();
+//            ResultSet resultSet = statement.executeQuery("SELECT id, password, balance FROM a_client");
+//            return new Client(resultSet.getLong("id"),resultSet.getString("password"),resultSet.getDouble("balance"));
+//        }catch (Exception e){
+//            return null;
+//        }
+//    }
 }
