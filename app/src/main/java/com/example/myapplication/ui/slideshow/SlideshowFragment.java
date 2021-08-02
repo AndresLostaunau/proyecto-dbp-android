@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,6 +18,8 @@ import com.example.myapplication.databinding.FragmentSlideshowBinding;
 
 public class SlideshowFragment extends Fragment {
 
+    EditText total;
+
     private SlideshowViewModel slideshowViewModel;
     private FragmentSlideshowBinding binding;
 
@@ -28,13 +31,6 @@ public class SlideshowFragment extends Fragment {
         binding = FragmentSlideshowBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
         return root;
     }
 
@@ -43,4 +39,5 @@ public class SlideshowFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
 }
