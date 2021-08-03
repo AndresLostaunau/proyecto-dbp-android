@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/default_background">
-
+    android:background="@drawable/login_img">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="413dp"
@@ -29,7 +28,7 @@
             android:id="@+id/utecTextLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="INICIAR SESION"
+            android:text="U-GAMES LOGIN"
             android:textSize="30dp" />
 
         <TextView
@@ -85,7 +84,7 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Si no tienes una cuenta registrate" />
+            android:text="You dont have an account yet?" />
 
         <Button
             android:id="@+id/registerLogin"
