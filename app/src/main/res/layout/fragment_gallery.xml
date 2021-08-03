@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.gallery.GalleryFragment"
-    android:background="@color/default_background">
+    android:background="@drawable/gallery_img">
 
 
     <TextView
@@ -45,7 +45,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/saldo"
         app:layout_constraintVertical_bias="0.462"
-        android:background="@color/white">
+        android:background="@drawable/gallery_img2">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,8 +58,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/minecraft" />
-
+                android:text="@string/minecraft"
+                android:textColor="@color/white" />
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="157dp"
@@ -89,7 +89,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/fortnite" />
+                android:text="@string/fortnite"
+                android:textColor="@color/white" />
 
             <ImageView
                 android:id="@+id/imageView5"
@@ -118,7 +119,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/call_of_duty" />
+                android:text="@string/call_of_duty"
+                android:textColor="@color/white" />
 
             <ImageView
                 android:id="@+id/imageView6"

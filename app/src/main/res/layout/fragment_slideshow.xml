@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/inventory_img2"
     tools:context=".ui.slideshow.SlideshowFragment">
 
     <TextView
@@ -11,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/menu_inventory"
+        android:textColor="@color/white"
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,13 +38,13 @@
         android:id="@+id/linearLayout"
         android:layout_width="363dp"
         android:layout_height="437dp"
-        android:background="@color/white"
+        android:background="@drawable/inventory_img2"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/total"
-        app:layout_constraintVertical_bias="0.242">
+        app:layout_constraintVertical_bias="0.222">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,7 +57,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/minecraft" />
+                android:text="@string/minecraft"
+                android:textColor="@color/white"/>
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -78,7 +81,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/fortnite" />
+                android:text="@string/fortnite"
+                android:textColor="@color/white"/>
 
             <ImageView
                 android:id="@+id/imageView5"
@@ -101,7 +105,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/call_of_duty" />
+                android:text="@string/call_of_duty"
+                android:textColor="@color/white"/>
 
             <ImageView
                 android:id="@+id/imageView6"
