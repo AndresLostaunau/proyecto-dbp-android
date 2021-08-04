@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">U-Games</string>
+    <string name="nav_header_title">Estudio Android</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="menu_home">Inicio</string>
+    <string name="login">Logeo</string>
+    <string name="register">Registro</string>
+    <string name="not_account">Aun no tienes una cuenta?</string>
+    <string name="password_login">Contraseña</string>
+    <string name="user_login">Usuario</string>
+    <string name="put_name">Coloca tu nombre:</string>
+    <string name="ready_home">LISTO</string>
+    <string name="menu_inventory">Inventario</string>
+    <string name="welcome_inventory">Bienvenido</string>
+    <string name="menu_shop">Tienda</string>
+    <string name="minecraft_price">S/ 200</string>
+    <string name="cod_price">S/ 120</string>
+    <string name="fornite_price">S/ 150</string>
+    <string name="error_fragment_message">A ocurrido un error</string>
+    <string name="dismiss_error">Error</string>
+</resources>
