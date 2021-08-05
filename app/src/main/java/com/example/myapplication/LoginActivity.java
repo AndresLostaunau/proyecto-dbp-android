@@ -32,8 +32,27 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent (LoginActivity.this, MainActivity.class);
-                startActivity(intent);
+                String username = textUser.getText().toString();
+                String password = textPassword.getText().toString();
+                DatabaseReference db = FirebaseDatabase.getInstance().getReference();
+                db.child("client").child(username).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+                        if (!task.isSuccessful()) {
+                            Log.e("firebase", "Error getting data", task.getException());
+                        }else{
+                            try{
+                                Client client = task.getResult().getValue(Client.class);
+                                if(client.getPassword().equals(password)){
+                                    Intent intent= new Intent (LoginActivity.this, MainActivity.class);
+                                    startActivity(intent);
+                                }
+                            }catch (Exception e){
+                                // TOAST
+                            }
+                        }
+                    }
+                });
             }
         });
 

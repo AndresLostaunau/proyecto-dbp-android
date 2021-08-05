@@ -32,8 +32,6 @@ public class RegisterActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent (RegisterActivity.this, MainActivity.class);
-                startActivity(intent);
                 String username = textUser.getText().toString();
                 String password = textPassword.getText().toString();
                 String rPassword = textPassword.getText().toString();
@@ -47,6 +45,8 @@ public class RegisterActivity extends AppCompatActivity {
                             if(task.getResult().getValue()==null && password.equals(rPassword)){
                                 Client client = new Client(username,password,200);
                                 db.child("client").child(username).setValue(client);
+                                Intent intent= new Intent (RegisterActivity.this, MainActivity.class);
+                                startActivity(intent);
                             }else{
                                 // TODO: HAGAN UN TOAST POFAVOR POFAVOCITO
                             }
