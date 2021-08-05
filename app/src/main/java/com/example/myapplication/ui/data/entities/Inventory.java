@@ -4,6 +4,8 @@ public class Inventory {
     String client_name;
     String game_name;
 
+    public Inventory(){}
+
     public Inventory(String client_name, String game_name) {
         this.client_name = client_name;
         this.game_name = game_name;
