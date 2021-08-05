@@ -9,6 +9,7 @@
     <string name="register">Registro</string>
     <string name="not_account">Aun no tienes una cuenta?</string>
     <string name="password_login">Contraseña</string>
+    <string name="password_repeated">Repite la Contraseña</string>
     <string name="user_login">Usuario</string>
     <string name="put_name">Coloca tu nombre:</string>
     <string name="ready_home">LISTO</string>

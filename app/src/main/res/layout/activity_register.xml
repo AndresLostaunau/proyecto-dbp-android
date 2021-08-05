@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:textColor="@color/lb_grey"
-            android:text="User"
+            android:text="@string/user_login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="240dp" />
@@ -54,7 +54,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="278dp" />
+            tools:layout_editor_absoluteY="278dp"
+            android:hint="@string/user_login" />
 
 
         <TextView
@@ -63,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:textColor="@color/lb_grey"
-            android:text="Password"
+            android:text="@string/password_login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="337dp" />
@@ -78,14 +79,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="375dp" />
+            tools:layout_editor_absoluteY="375dp"
+            android:hint="@string/password_login"/>
 
         <TextView
             android:id="@+id/Text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="Repeat Password"
+            android:text="@string/password_repeated"
             android:textColor="@color/lb_grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -101,13 +103,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="375dp" />
+            tools:layout_editor_absoluteY="375dp"
+            android:hint="@string/password_repeated"/>
 
         <Button
             android:id="@+id/register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Register" />
+            android:text="@string/register" />
 
 
     </LinearLayout>
