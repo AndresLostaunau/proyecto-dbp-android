@@ -34,16 +34,19 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent= new Intent (RegisterActivity.this, MainActivity.class);
                 startActivity(intent);
+                String username = textUser.getText().toString();
+                String password = textPassword.getText().toString();
+                String rPassword = textPassword.getText().toString();
                 DatabaseReference db = FirebaseDatabase.getInstance().getReference();
-                db.child("client").child("test").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                db.child("client").child(username).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<DataSnapshot> task) {
                         if (!task.isSuccessful()) {
                             Log.e("firebase", "Error getting data", task.getException());
                         }else{
-                            if(task.getResult().getValue(Client.class)==null && textPassword.toString().equals(textRPassword.toString())){
-                                Client client = new Client(textUser.toString(),textPassword.toString(),200);
-                                db.child("client").child(textUser.toString()).setValue(client);
+                            if(task.getResult().getValue()==null && password.equals(rPassword)){
+                                Client client = new Client(username,password,200);
+                                db.child("client").child(username).setValue(client);
                             }else{
                                 // TODO: HAGAN UN TOAST POFAVOR POFAVOCITO
                             }

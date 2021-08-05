@@ -5,6 +5,8 @@ public class Game {
     int price;
     String img_link;
 
+    public Game() {}
+
     public Game(String name, int price, String img_link) {
         this.name = name;
         this.price = price;
