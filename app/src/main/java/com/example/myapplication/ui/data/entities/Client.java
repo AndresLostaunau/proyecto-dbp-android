@@ -1,25 +1,16 @@
 package com.example.myapplication.ui.data.entities;
 
 public class Client {
-    Long id;
     String username;
     String password;
     double balance;
 
     Client(){}
 
-    public Client(Long id, String username, String password, double balance) {
-        this.id = id;
+    public Client(String username, String password, double balance) {
         this.username = username;
+        this.password = password;
         this.balance = balance;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getUsername() {
@@ -44,5 +35,14 @@ public class Client {
 
     public void setBalance(double balance) {
         this.balance = balance;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", balance=" + balance +
+                '}';
     }
 }
