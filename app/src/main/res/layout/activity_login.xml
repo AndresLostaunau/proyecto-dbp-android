@@ -29,6 +29,7 @@
             android:id="@+id/utecTextLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/lb_grey"
             android:text="U-Games Login"
             android:textSize="30sp" />
 
@@ -38,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:text="@string/user_login"
+            android:textColor="@color/lb_grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="240dp" />
@@ -48,6 +50,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
+            android:textColor="@color/lb_grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
@@ -60,6 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:text="@string/password_login"
+            android:textColor="@color/lb_grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="337dp" />
@@ -70,6 +74,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPassword"
+            android:textColor="@color/lb_grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
