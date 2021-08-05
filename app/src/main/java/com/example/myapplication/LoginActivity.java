@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.myapplication.ui.data.entities.Client;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -46,9 +47,11 @@ public class LoginActivity extends AppCompatActivity {
                                 if(client.getPassword().equals(password)){
                                     Intent intent= new Intent (LoginActivity.this, MainActivity.class);
                                     startActivity(intent);
+                                }else{
+                                    Toast.makeText(LoginActivity.this, "Contraseña incorrecta", Toast.LENGTH_SHORT).show();
                                 }
                             }catch (Exception e){
-                                // TOAST
+                                Toast.makeText(LoginActivity.this, "Usuario no existe", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }

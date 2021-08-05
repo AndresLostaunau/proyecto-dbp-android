@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -76,7 +77,7 @@ public class GalleryFragment extends Fragment {
                 try{
                     saldo.setText(String.valueOf(task.getResult().getValue(Client.class).getBalance()));
                 }catch (Exception e){
-                    // Toast, error.
+                    Toast.makeText(getActivity(), "Error inesperado", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -91,7 +92,7 @@ public class GalleryFragment extends Fragment {
                         try{
                             Client client = task.getResult().getValue(Client.class);
                             if(precio > client.getBalance()){
-                                //Toast, sin dinero.
+                                Toast.makeText(getActivity(), "No hay suficiente dinero", Toast.LENGTH_SHORT).show();
                                 return;
                             }
                             db.child("inventory").child("admin").child("Fortnite").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
@@ -101,8 +102,9 @@ public class GalleryFragment extends Fragment {
                                         db.child("inventory").child("admin").child("Fortnite").setValue(true);
                                         db.child("client").child("admin").child("balance").setValue(client.getBalance()-precio);
                                         saldo.setText(String.valueOf(client.getBalance()-precio));
+                                        Toast.makeText(getActivity(), "Juego comprado con exito", Toast.LENGTH_SHORT).show();
                                     }else{
-                                        //toast, ya tienes el juego.
+                                        Toast.makeText(getActivity(), "Ya tienes el juego", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });
@@ -127,7 +129,7 @@ public class GalleryFragment extends Fragment {
                         try{
                             Client client = task.getResult().getValue(Client.class);
                             if(precio > client.getBalance()){
-                                //Toast, sin dinero.
+                                Toast.makeText(getActivity(), "No hay suficiente dinero", Toast.LENGTH_SHORT).show();
                                 return;
                             }
                             db.child("inventory").child("admin").child("Minecraft").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
@@ -137,13 +139,14 @@ public class GalleryFragment extends Fragment {
                                         db.child("inventory").child("admin").child("Minecraft").setValue(true);
                                         db.child("client").child("admin").child("balance").setValue(client.getBalance()-precio);
                                         saldo.setText(String.valueOf(client.getBalance()-precio));
+                                        Toast.makeText(getActivity(), "Juego comprado con exito", Toast.LENGTH_SHORT).show();
                                     }else{
-                                        //toast, ya tienes el juego.
+                                        Toast.makeText(getActivity(), "Ya tienes el juego", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });
                         }catch (Exception e){
-                            // Toast, error.
+                            Toast.makeText(getActivity(), "Error inesperado", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -154,15 +157,13 @@ public class GalleryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 int precio = 120;
-                //int nuevo= Integer.parseInt(saldo.getText().toString())-precio;
-                //saldo.setText(String.valueOf(nuevo));
                 db.child("client").child("admin").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<DataSnapshot> task) {
                         try{
                             Client client = task.getResult().getValue(Client.class);
                             if(precio > client.getBalance()){
-                                //Toast, sin dinero.
+                                Toast.makeText(getActivity(), "No hay suficiente dinero", Toast.LENGTH_SHORT).show();
                                 return;
                             }
                             db.child("inventory").child("admin").child("Call of Duty").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
@@ -172,13 +173,14 @@ public class GalleryFragment extends Fragment {
                                         db.child("inventory").child("admin").child("Call of Duty").setValue(true);
                                         db.child("client").child("admin").child("balance").setValue(client.getBalance()-precio);
                                         saldo.setText(String.valueOf(client.getBalance()-precio));
+                                        Toast.makeText(getActivity(), "Juego comprado con exito", Toast.LENGTH_SHORT).show();
                                     }else{
-                                        //toast, ya tienes el juego.
+                                        Toast.makeText(getActivity(), "Ya tienes el juego", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });
                         }catch (Exception e){
-                            // Toast, error.
+                            Toast.makeText(getActivity(), "Error inesperado", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
