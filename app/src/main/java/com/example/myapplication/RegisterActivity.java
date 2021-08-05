@@ -39,15 +39,19 @@ public class RegisterActivity extends AppCompatActivity {
 
                 if(username.length()<=0){
                     Toast.makeText(RegisterActivity.this, "Ingresar un usuario", Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 else if (password.length()<=0){
                     Toast.makeText(RegisterActivity.this, "Ingresar una contraseña", Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 else if (rPassword.length()<=0){
                     Toast.makeText(RegisterActivity.this, "Confirmar la contraseña", Toast.LENGTH_SHORT).show();
+                    return;
                 }
-                else if(rPassword!=password){
+                else if(!rPassword.equals(password)){
                     Toast.makeText(RegisterActivity.this, "Contraseñas no coinciden", Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
                 DatabaseReference db = FirebaseDatabase.getInstance().getReference();
@@ -58,11 +62,13 @@ public class RegisterActivity extends AppCompatActivity {
                         if (!task.isSuccessful()) {
                             Log.e("firebase", "Error getting data", task.getException());
                         } else {
-                            if (task.getResult().getValue() == null && password.equals(rPassword)) {
+                            if (task.getResult().getValue() == null) {
                                 Client client = new Client(username, password, 200);
                                 db.child("client").child(username).setValue(client);
                                 Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                                 startActivity(intent);
+                            }else{
+                                Toast.makeText(RegisterActivity.this, "Ya existe la cuenta", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }
